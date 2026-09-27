@@ -1,1 +1,54 @@
-import PortalShell from "@/components/PortalShell"; export default function Runner(){return <PortalShell role="instructor" title="Run This Lesson"><div className="grid gap-5 lg:grid-cols-[1fr_340px]"><section className="rounded-2xl border bg-white p-7"><span className="rounded-full bg-[var(--gray)] px-3 py-1 text-xs font-bold">DAY 4</span><h2 className="mt-4 text-3xl font-bold">Make It Work</h2><h3 className="mt-7 font-bold">Learn Before Teaching</h3><div className="mt-3 rounded-xl bg-[var(--gray)] p-5"><b>Algorithm</b><p className="mt-2 text-sm text-[var(--muted)]">A defined sequence of steps used to solve a problem.</p></div><h3 className="mt-7 font-bold">SAY</h3><p className="mt-2 border-l-4 border-[var(--green)] bg-[var(--gray)] p-4">“Before we build, let’s describe exactly what should happen in order.”</p><h3 className="mt-6 font-bold">DO</h3><ol className="mt-2 list-decimal space-y-2 pl-6 text-[var(--muted)]"><li>Model a simple sequence.</li><li>Students write pseudocode.</li><li>Build one step.</li><li>Test and isolate the first mismatch.</li></ol><h3 className="mt-6 font-bold">WATCH FOR</h3><p className="mt-2 text-[var(--muted)]">Changing multiple things at once. Test one variable or step at a time.</p></section><aside className="space-y-4"><div className="rounded-2xl bg-[var(--ink)] p-6 text-white"><b>Plan B</b><p className="mt-2 text-sm text-white/70">Limited connectivity: use local activity materials.</p></div><div className="rounded-2xl border bg-white p-6"><b>Plan C</b><p className="mt-2 text-sm text-[var(--muted)]">No devices: act out instructions and identify sequence errors.</p></div><div className="rounded-2xl border bg-white p-6"><b>Plan D</b><p className="mt-2 text-sm text-[var(--muted)]">Diagnose, recover safely and document the question.</p></div></aside></div></PortalShell>}
+import PortalShell from "@/components/PortalShell";
+import InstructorAICoach from "@/components/InstructorAICoach";
+
+export default function Runner() {
+  return (
+    <PortalShell role="instructor" title="Run This Lesson">
+      <div className="grid gap-5 lg:grid-cols-[1fr_380px]">
+        <section className="rounded-2xl border bg-white p-7">
+          <span className="rounded-full bg-[var(--gray)] px-3 py-1 text-xs font-bold">DAY 4</span>
+          <h2 className="mt-4 text-3xl font-bold">Make It Work</h2>
+          <h3 className="mt-7 font-bold">Learn Before Teaching</h3>
+          <div className="mt-3 rounded-xl bg-[var(--gray)] p-5">
+            <b>Algorithm</b>
+            <p className="mt-2 text-sm text-[var(--muted)]">A defined sequence of steps used to solve a problem.</p>
+          </div>
+          <h3 className="mt-7 font-bold">SAY</h3>
+          <p className="mt-2 border-l-4 border-[var(--green)] bg-[var(--gray)] p-4">“Before we build, let’s describe exactly what should happen in order.”</p>
+          <h3 className="mt-6 font-bold">DO</h3>
+          <ol className="mt-2 list-decimal space-y-2 pl-6 text-[var(--muted)]">
+            <li>Model a simple sequence.</li>
+            <li>Students write pseudocode.</li>
+            <li>Build one step.</li>
+            <li>Test and isolate the first mismatch.</li>
+          </ol>
+          <h3 className="mt-6 font-bold">WATCH FOR</h3>
+          <p className="mt-2 text-[var(--muted)]">Changing multiple things at once. Test one variable or step at a time.</p>
+        </section>
+
+        <aside className="space-y-4">
+          <div className="rounded-2xl bg-[var(--ink)] p-6 text-white">
+            <b>Plan B</b>
+            <p className="mt-2 text-sm text-white/70">Limited connectivity: use local activity materials.</p>
+          </div>
+          <div className="rounded-2xl border bg-white p-6">
+            <b>Plan C</b>
+            <p className="mt-2 text-sm text-[var(--muted)]">No devices: act out instructions and identify sequence errors.</p>
+          </div>
+          <div className="rounded-2xl border bg-white p-6">
+            <b>Plan D</b>
+            <p className="mt-2 text-sm text-[var(--muted)]">Diagnose, recover safely and document the question.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div className="mt-8">
+        <InstructorAICoach
+          lesson="Day 4: Make It Work"
+          concept="Algorithms, sequencing, pseudocode, and debugging"
+          tool="MakeCode Arcade"
+        />
+      </div>
+    </PortalShell>
+  );
+}
