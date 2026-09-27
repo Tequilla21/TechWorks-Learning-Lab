@@ -40,3 +40,19 @@ The repository contains the application architecture and database schema. Real a
 ## Product principle
 
 Teach transferable technology concepts. Let the tool change. Keep learning moving regardless of connectivity.
+
+
+## Instructor AI Coach
+
+The instructor portal includes an AI Coach at `/instructor/troubleshooting` and inside the lesson runner.
+
+The UI sends only the lesson context, selected coaching mode, tool/environment, and the instructor's question to `/api/instructor-ai`. The server keeps the provider API key private and applies Code by Tee instructional guardrails before calling the AI provider.
+
+To enable live answers locally:
+
+1. Copy `.env.example` to `.env.local`.
+2. Add your server-side `OPENAI_API_KEY`.
+3. Optionally set `OPENAI_MODEL`.
+4. Restart `npm run dev`.
+
+The current implementation is the foundation for a later curriculum knowledge-base/RAG layer. The next step is to connect approved Code by Tee lesson, troubleshooting, tool, accessibility, safety, and Plan B/C/D content so the coach can answer from the curriculum rather than relying only on the lesson context sent by the page.
