@@ -1,0 +1,1 @@
+import PortalShell from "@/components/PortalShell"; export default function Schedule(){return <PortalShell role="family" title="Schedule"><div className="space-y-3">{["Tuesday · 4:00 PM · GameMakers","Thursday · 4:00 PM · GameMakers","Saturday · Showcase prep"].map(x=><div key={x} className="rounded-xl border bg-white p-4 font-semibold">{x}</div>)}</div></PortalShell>}
