@@ -1,0 +1,1 @@
+import PortalShell from "@/components/PortalShell"; export default function Family(){return <PortalShell role="family" title="Family Overview"><div className="grid gap-5 md:grid-cols-3">{["GameMakers Lab · Day 4","6 approved portfolio items","Next session · Tuesday"].map(x=><div key={x} className="rounded-2xl border bg-white p-6 font-bold">{x}</div>)}</div></PortalShell>}
