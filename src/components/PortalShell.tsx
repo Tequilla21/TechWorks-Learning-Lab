@@ -1,1 +1,55 @@
-"use client"; import {useState} from "react"; export default function PortalShell({role,title,children}:{role:string,title:string,children:React.ReactNode}){const [open,setOpen]=useState(false);const links=role==="student"?[["Today","/student"],["Lessons","/student/lessons"],["Projects","/student/projects"],["Portfolio","/student/portfolio"],["Progress","/student/progress"],["Opportunities","/student/opportunities"]]:role==="instructor"?[["Dashboard","/instructor"],["Curriculum","/instructor/curriculum"],["Run a Lesson","/instructor/lesson-runner"],["Students","/instructor/students"],["Assessments","/instructor/assessments"],["Training","/instructor/training"],["Troubleshooting","/instructor/troubleshooting"]]:role==="family"?[["Overview","/family"],["Children","/family/children"],["Portfolio","/family/portfolio"],["Schedule","/family/schedule"],["Resources","/family/resources"]]:[["Dashboard","/admin"],["Programs","/admin/programs"],["Sites","/admin/sites"],["Enrollment","/admin/enrollment"],["Attendance","/admin/attendance"],["Staff","/admin/staff"],["Meals","/admin/meals"],["Safety","/admin/safety"],["Partners","/admin/partners"],["Reports","/admin/reports"]];return <div className="min-h-screen bg-[var(--gray)]"><header className="border-b bg-white"><div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4"><a href="/" className="font-bold text-xl">TechWorks<span className="text-[var(--green)]">.</span></a><button className="rounded-lg border px-3 py-2 md:hidden" onClick={()=>setOpen(!open)}>Menu</button><div className="hidden items-center gap-4 md:flex"><span className="text-sm text-[var(--muted)]">{role[0].toUpperCase()+role.slice(1)} Portal</span><a href="/" className="text-sm font-semibold">Exit</a></div></div></header><div className="mx-auto flex max-w-[1500px]"><aside className={(open?"block":"hidden")+" w-64 shrink-0 border-r bg-white p-4 md:block"}><p className="px-3 pb-3 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">{role}</p>{links.map(([n,h])=><a key={h} href={h} className="mb-1 block rounded-xl px-3 py-2.5 text-sm font-medium hover:bg-[var(--gray)]">{n}</a>)}</aside><main className="min-w-0 flex-1 p-5 md:p-8"><div className="mb-7"><p className="text-sm font-semibold text-[var(--green)]">CODE BY TEE</p><h1 className="mt-1 text-3xl font-bold">{title}</h1></div>{children}</main></div></div>}
+"use client";
+
+import { useState } from "react";
+
+export default function PortalShell({
+  role,
+  title,
+  children,
+}: {
+  role: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+
+  const links =
+    role === "student"
+      ? [["Today", "/student"], ["Lessons", "/student/lessons"], ["Projects", "/student/projects"], ["Portfolio", "/student/portfolio"], ["Progress", "/student/progress"], ["Opportunities", "/student/opportunities"]]
+      : role === "instructor"
+        ? [["Dashboard", "/instructor"], ["Curriculum", "/instructor/curriculum"], ["Run a Lesson", "/instructor/lesson-runner"], ["Students", "/instructor/students"], ["Assessments", "/instructor/assessments"], ["Training", "/instructor/training"], ["AI Coach", "/instructor/troubleshooting"]]
+        : role === "family"
+          ? [["Overview", "/family"], ["Children", "/family/children"], ["Portfolio", "/family/portfolio"], ["Schedule", "/family/schedule"], ["Resources", "/family/resources"]]
+          : [["Dashboard", "/admin"], ["Programs", "/admin/programs"], ["Sites", "/admin/sites"], ["Enrollment", "/admin/enrollment"], ["Attendance", "/admin/attendance"], ["Staff", "/admin/staff"], ["Meals", "/admin/meals"], ["Safety", "/admin/safety"], ["Partners", "/admin/partners"], ["Reports", "/admin/reports"]];
+
+  return (
+    <div className="min-h-screen bg-[var(--gray)]">
+      <header className="border-b bg-white">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4">
+          <a href="/" className="font-bold text-xl">TechWorks<span className="text-[var(--green)]">.</span></a>
+          <button className="rounded-lg border px-3 py-2 md:hidden" onClick={() => setOpen(!open)}>Menu</button>
+          <div className="hidden items-center gap-4 md:flex">
+            <span className="text-sm text-[var(--muted)]">{role[0].toUpperCase() + role.slice(1)} Portal</span>
+            <a href="/" className="text-sm font-semibold">Exit</a>
+          </div>
+        </div>
+      </header>
+
+      <div className="mx-auto flex max-w-[1500px]">
+        <aside className={(open ? "block" : "hidden") + " w-64 shrink-0 border-r bg-white p-4 md:block"}>
+          <p className="px-3 pb-3 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">{role}</p>
+          {links.map(([n, h]) => (
+            <a key={h} href={h} className="mb-1 block rounded-xl px-3 py-2.5 text-sm font-medium hover:bg-[var(--gray)]">{n}</a>
+          ))}
+        </aside>
+        <main className="min-w-0 flex-1 p-5 md:p-8">
+          <div className="mb-7">
+            <p className="text-sm font-semibold text-[var(--green)]">CODE BY TEE</p>
+            <h1 className="mt-1 text-3xl font-bold">{title}</h1>
+          </div>
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+}
