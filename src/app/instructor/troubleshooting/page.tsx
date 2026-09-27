@@ -1,3 +1,5 @@
+"use client";
+
 import PortalShell from "@/components/PortalShell";
 import InstructorAICoach from "@/components/InstructorAICoach";
 
