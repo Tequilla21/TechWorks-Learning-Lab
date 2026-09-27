@@ -1,0 +1,1 @@
+import PortalShell from "@/components/PortalShell"; export default function Children(){return <PortalShell role="family" title="Children"><div className="rounded-2xl border bg-white p-6"><h2 className="text-xl font-bold">Learner profile</h2><p className="mt-3 text-[var(--muted)]">GameMakers Lab · Builder pathway · approved family visibility.</p></div></PortalShell>}
